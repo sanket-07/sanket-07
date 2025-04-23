@@ -1,0 +1,196 @@
+AIM: To write and execute image processing programs using point processing
+methods : 2. Perform Bit plane slicing
+code
+%Expt 2B:Bit plane slicing
+A=imread ("/MATLAB Drive/New Folder/Mustang.jpg");
+A=rgb2gray(A);
+B1=bitget (A,1);
+B2=bitget(A,2);
+B3=bitget (A,3);
+B4=bitget(A,4);
+B5=bitget(A,5);
+B6=bitget (A,6);
+B7=bitget(A,7);
+B8=bitget(A,8);
+subplot(2,4,1)
+imshow(double (B1)); title("Bit plane 1");
+subplot(2,4,2)
+imshow(double (B2)); title("Bit plane 2");
+subplot(2,4,3)
+imshow(double (B3)); title("Bit plane 3");
+subplot(2,4,4)
+imshow(double (B4)); title("Bit plane 4");
+subplot(2,4,5)
+imshow(double (B5)); title("Bit plane 5");
+subplot(2,4,6)
+imshow(double (B6)); title("Bit plane 6");
+subplot(2,4,7)
+imshow(double (B7)); title("Bit plane 7");
+subplot(2,4,8)
+imshow(double (B8)); title("Bit plane 8");
+
+
+
+To study Discrete Fourier transform using MATLAB
+code
+% Aim: To find DFT of an image
+I= imread ("/MATLAB Drive/New Folder/Mustang.jpg");
+imshow (I)
+title('original color image'); 
+
+ run kr 
+
+I1=rgb2gray(I);
+imshow (I1);
+title('Grey image');
+
+run kr 
+
+I2=fft(I1);
+imshow(I2);
+title('DFT of the image');
+
+run kr 
+
+I3=ifft2(I2);
+imshow(I3);
+title('inverse DFT'); 
+
+run kr 
+
+AIM: To separate RGB components from color image
+code 
+import cv2
+import numpy as np
+from google.colab.patches import cv2_imshow
+import matplotlib.pyplot as plt
+
+# Read image
+img = cv2.imread('/content/Screenshot 2025-04-23 234034.png')
+cv2_imshow(img)
+plt.title("Original Image")
+plt.axis("off")
+plt.show()
+
+# Split channels and create BGR component images
+b, g, r = cv2.split(img)
+zeros = np.zeros_like(b)
+components = {
+    "Blue Component": cv2.merge([b, zeros, zeros]),
+    "Green Component": cv2.merge([zeros, g, zeros]),
+    "Red Component": cv2.merge([zeros, zeros, r])
+}
+
+# Display components
+for title, comp in components.items():
+    cv2_imshow(comp)
+    plt.title(title)
+    plt.axis("off")
+    plt.show()
+
+AIM: classification using K- means algorithm
+code
+import matplotlib.pyplot as plt
+x = [4, 5, 10, 4, 3, 11, 14 , 6, 10, 12]
+y = [21, 19, 24, 17, 16, 25, 24, 22, 21, 21]
+plt.scatter(x, y)
+plt.show()
+from sklearn.cluster import KMeans
+data=list(zip(x, y));
+inertias = []
+for i in range(1,11):
+  kmeans = KMeans(n_clusters=i);
+  kmeans.fit(data)
+  inertias.append(kmeans.inertia_)
+plt.plot(range(1,11), inertias, marker='o')
+plt.title('Elbow method')
+plt.xlabel('Number of clusters')
+plt.ylabel('Inertia')
+plt.show()
+
+
+AIM: Write and execute programs for Low Pass, High Pass and Median filtering
+on an image.
+code
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the image
+image = cv2.imread('/content/barbie.jpeg', cv2.IMREAD_COLOR)
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # Convert to RGB for display
+
+# Apply Low Pass Filter (Gaussian Blur)
+low_pass = cv2.GaussianBlur(image, (5, 5), 0)
+
+# Apply High Pass Filter (subtract low pass from the original image)
+high_pass = cv2.subtract(image, low_pass)
+
+# Apply Median Filter
+median_filter = cv2.medianBlur(image, 5)
+
+# Plot all results
+plt.figure(figsize=(5, 5))
+
+# Original image
+plt.subplot(2, 2, 1)
+plt.imshow(image)
+plt.title("Original Image")
+plt.axis('off')
+
+# Low pass filtered image
+plt.subplot(2, 2, 2)
+plt.imshow(low_pass)
+plt.title("Low Pass Filtered Image")
+plt.axis('off')
+
+# High pass filtered image
+plt.subplot(2, 2, 3)
+plt.imshow(high_pass)
+plt.title("High Pass Filtered Image")
+plt.axis('off')
+
+# Median filtered image
+plt.subplot(2, 2, 4)
+plt.imshow(median_filter)
+plt.title("Median Filtered Image")
+plt.axis('off')
+
+plt.tight_layout()
+plt.show()
+
+AIM: To write and execute image processing programs using point processing
+methods : 1.Obtain Digital Negative image
+code
+# Step 1: Import required libraries
+import cv2
+from google.colab.patches import cv2_imshow
+import matplotlib.pyplot as plt
+
+# Step 2: Load the image
+img = cv2.imread('/content/Screenshot 2025-04-23 234034.png')  # Replace with your image name
+cv2_imshow(img)
+plt.title('Original Image')
+plt.axis('off')
+plt.show()
+
+# Step 3: Convert to grayscale (optional for negative effect)
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+cv2_imshow(gray)
+plt.title('Grayscale Image')
+plt.axis('off')
+plt.show()
+
+# Step 4: Apply negative transformation
+negative = 255 - gray
+
+# Step 5: Display and optionally save the result
+cv2_imshow(negative)
+plt.title('Digital Negative Image')
+plt.axis('off')
+plt.show()
+
+# To save the result (optional)
+cv2.imwrite('negative_image.jpg', negative)
+
+
