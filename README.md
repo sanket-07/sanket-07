@@ -1,16 +1,39 @@
-## Hi there 👋
+# Hi there 👋 I'm Sanket Gawade  
 
-<!--
-**sanket-07/sanket-07** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![AI](https://img.shields.io/badge/AI-Artificial%20Intelligence-blue?style=for-the-badge)
+![EXTC](https://img.shields.io/badge/EXTC-Electronics-orange?style=for-the-badge)
+🎓 **EXTC Engineering Student (Electronics & Telecommunication)**  
+💻 *Python | Artificial Intelligence | Communication Systems*  
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 👨‍💻 About Me
+
+- 🎓 I am an **EXTC Engineering student**
+- 📡 Interested in **Electronics, Communication & AI**
+- 🐍 Good knowledge of **Python programming**
+- 🤖 Exploring **Artificial Intelligence & Machine Learning**
+- 🎯 Goal: Become a **Skilled Engineer in Tech & AI domain**
+
+---
+
+## 🛠️ Skills
+
+### Programming
+- Python 🐍
+- C
+- C++
+
+### Electronics & EXTC
+- Digital Electronics  
+- Analog Electronics  
+- Communication Systems  
+- Signals & Systems  
+
+### AI & CS Concepts
+- Machine Learning Basics  
+- Supervised Learning  
+- BFS, DFS, Minimax Algorithm  
+
+---
